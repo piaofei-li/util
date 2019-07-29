@@ -9,6 +9,7 @@ public class StringUtil {
 
     /**
      * 判断传入的String对象是否为空
+     *
      * @param str String
      * @return 为空返回 true，不为空返回 false
      */
@@ -18,6 +19,7 @@ public class StringUtil {
 
     /**
      * 判断传入的String对象是否为空白（空格）
+     *
      * @param str String
      * @return 为空白返回 true，不为空白返回 false
      */
