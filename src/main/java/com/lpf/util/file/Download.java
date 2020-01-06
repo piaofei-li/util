@@ -8,6 +8,9 @@ import java.io.IOException;
  * @author lipiaofei
  * @version 1.0
  * @date 2019/07/22 11:16
+ *
+ * 依赖：
+ *      servlet
  */
 public class Download {
 
