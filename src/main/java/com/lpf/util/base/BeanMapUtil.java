@@ -7,7 +7,6 @@ import java.util.Map;
 
 /**
  * @author lipiaofei
- * @version 1.0
  * @date 2019/07/29 15:39
  * javabean 与 map 之间的相互转换
  */

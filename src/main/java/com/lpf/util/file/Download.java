@@ -3,10 +3,11 @@ package com.lpf.util.file;
 import javax.servlet.ServletOutputStream;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.net.URLEncoder;
+import java.nio.charset.StandardCharsets;
 
 /**
  * @author lipiaofei
- * @version 1.0
  * @date 2019/07/22 11:16
  *
  * 依赖：
@@ -25,10 +26,13 @@ public class Download {
      * @throws IOException 异常
      */
     public void downloadFile(HttpServletResponse response) throws IOException {
+        /* 将文件名转换为URL编码，防止文件名乱码 */
+        String fileName = URLEncoder.encode("test.txt", StandardCharsets.UTF_8.name());
         /*  设置文件ContentType类型，这样设置，会自动判断下载文件类型   */
         response.setContentType("application/multipart/form-data");
+        response.setCharacterEncoding(StandardCharsets.UTF_8.name());
         /* 设置文件头：最后一个参数是设置下载文件名(假如我们叫test.txt)   */
-        response.setHeader("Content-Disposition", "attachment;filename=test.txt");
+        response.setHeader("Content-Disposition", "attachment;filename=" + fileName);
         ServletOutputStream os = response.getOutputStream();
         os.write("test download".getBytes());
         os.flush();
